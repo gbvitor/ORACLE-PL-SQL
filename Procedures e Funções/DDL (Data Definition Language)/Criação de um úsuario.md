@@ -1,6 +1,6 @@
 ### 1 - Alteração da sessão.
 
-```bash
+```sql
 ALTER SESSION SET "_ORACLE_SCRIPT" = true;
 ```
 
@@ -8,7 +8,7 @@ Este comando altera a configuração da sessão atual para permitir o uso de rec
 
 ### 2 - Criação de um úsuario.
 
-```bash
+```sql
 CREATE USER user IDENTIFIED BY pass DEFAULT TABLESPACE USERS;
 ```
 
@@ -16,7 +16,7 @@ Este comando cria um novo usuário no banco de dados com o nome user e define a 
 
 ### 3 - Alterando as garantias do úsuario.
 
-```bash
+```sql
 GRANT connect, resource TO user
 ```
 
@@ -27,7 +27,7 @@ Aqui, são concedidas duas permissões ao usuário criado:
 
 ### 4 - Alterando o usuário.
 
-```bash
+```sql
 ALTER USER user QUOTA UNLIMITED ON USERS;
 ```
 
