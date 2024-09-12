@@ -1,6 +1,6 @@
 ### Execute o código abaixo para criação das tabelas e constraints.
 
-```bash
+```sql
 CREATE TABLE PRODUTO_EXERCICIO
 (
 COD VARCHAR2(5)

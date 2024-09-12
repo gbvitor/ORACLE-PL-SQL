@@ -28,3 +28,20 @@ BEGIN
 
 END;
 ```
+
+### Criação de uma função para obter descrição do segmento de mercado através do recebimento do ID pelo parâmetro da função.
+
+```sql
+CREATE OR REPLACE FUNCTION obter_descricao_segmercado
+(p_ID IN SEGMERCADO.ID%type)
+RETURN SEGMERCADO.DESCRICAO%type
+IS
+   v_DESCRICAO SEGMERCADO.DESCRICAO%type;
+BEGIN
+   SELECT DESCRICAO INTO v_DESCRICAO FROM SEGMERCADO WHERE ID = p_ID;
+   RETURN v_DESCRICAO;
+END;
+
+--Mostra o conteudo ultilizando a função criada
+SELECT ID, obter_descricao_segmercado(ID), DESCRICAO, LOWER(DESCRICAO) FROM SEGMERCADO;
+```
