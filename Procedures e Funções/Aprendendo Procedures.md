@@ -1,6 +1,4 @@
-#
-
--  ### Criação de uma procedure nomeada incluir_segmercado que insere na tabela de segmento de mercado (SEGMERCADO) os valore (p_ID e p_DESCRICAO), os valores são recebidos pelos parâmetros da procedure.
+### Criação de uma procedure nomeada incluir_segmercado que insere na tabela de segmento de mercado (SEGMERCADO) os valores (p_ID e p_DESCRICAO), os valores são recebidos pelos parâmetros da procedure.
 
 ```bash
 CREATE OR REPLACE PROCEDURE incluir_segmercado
@@ -12,13 +10,13 @@ BEGIN
 END;
 ```
 
--  ### Executa adicionando valores através dos parametros da procedure
+### Executa a procedure adicionando valores através dos parâmetros da procedure
 
 ```bash
 EXECUTE incluir_segmercado(4,'Farmaceuticos');
 ```
 
--  ### Forma de alterar a procedure para que ela receba diretamente nos parâmetros os tipos dos dados que serão recebidos (%TYPE)
+### Forma de alterar a procedure para receber diretamente nos parâmetros os tipos dos dados que serão recebidos (%TYPE)
 
 ```bash
 CREATE OR REPLACE PROCEDURE incluir_segmercado
@@ -30,7 +28,7 @@ BEGIN
 END;
 ```
 
--  ### Elimina a procedure desejada
+### Elimina a procedure desejada
 
 ```bash
 DROP PROCEDURE incluir_segmercado;
