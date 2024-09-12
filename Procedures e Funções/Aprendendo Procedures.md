@@ -10,13 +10,13 @@ BEGIN
 END;
 ```
 
-### Executa a procedure adicionando valores através dos parâmetros da procedure
+### Executa a procedure adicionando valores através dos parâmetros da procedure.
 
 ```bash
 EXECUTE incluir_segmercado(4,'Farmaceuticos');
 ```
 
-### Forma de alterar a procedure para receber diretamente nos parâmetros os tipos dos dados que serão recebidos (%TYPE)
+### Forma de alterar a procedure para receber diretamente nos parâmetros os tipos dos dados que serão recebidos (%TYPE).
 
 ```bash
 CREATE OR REPLACE PROCEDURE incluir_segmercado
@@ -28,7 +28,7 @@ BEGIN
 END;
 ```
 
-### Elimina a procedure desejada
+### Elimina a procedure desejada.
 
 ```bash
 DROP PROCEDURE incluir_segmercado;
