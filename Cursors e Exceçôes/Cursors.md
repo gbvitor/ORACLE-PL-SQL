@@ -39,7 +39,7 @@ Criados automaticamente pelo Oracle para operações SQL DML (INSERT, UPDATE, DE
 Não requerem declaração ou controle explícito pelo desenvolvedor.
 
 ```sql
---Execute os comandos abaixo para ver como funciona a estrutura de CURSOR:
+-- Execute os comandos abaixo para ver como funciona a estrutura de CURSOR:
 
 SET SERVEROUTPUT ON;
 DECLARE
@@ -75,7 +75,7 @@ END;
 ```
 
 ```sql
---É possível gerenciar o CURSOR usando a estrutura de repetição WHILE ... LOOP:
+-- É possível gerenciar o CURSOR usando a estrutura de repetição WHILE ... LOOP:
 
 DECLARE
    v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 3;
@@ -93,7 +93,7 @@ END;
 ```
 
 ```sql
---Ou então você pode usar o FOR, onde muitos comandos de atualização do gerenciamento do CURSOR, dentro do programa PL/SQL, são automaticamente declaradas:
+-- Ou então você pode usar o FOR, onde muitos comandos de atualização do gerenciamento do CURSOR, dentro do programa PL/SQL, são automaticamente declaradas:
 
 DECLARE
    v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 1;

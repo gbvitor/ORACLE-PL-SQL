@@ -1,7 +1,7 @@
 ```sql
 
---Inicie esta aula transformando a formatação do CNPJ em uma função, passando
---como parâmetros o valor de entrada e o valor de saída:
+-- Inicie esta aula transformando a formatação do CNPJ em uma função, passando
+-- como parâmetros o valor de entrada e o valor de saída:
 
 CREATE OR REPLACE PROCEDURE FORMATA_CNPJ
 (p_CNPJ IN cliente.cnpj%type, p_CNPJ_SAIDA OUT cliente.cnpj%type)
@@ -10,8 +10,8 @@ BEGIN
    p_CNPJ_SAIDA := SUBSTR(p_CNPJ, 1,3) || '/' || SUBSTR(p_CNPJ, 4,2) || '-' || SUBSTR(p_CNPJ,6);
 END;
 
---Para entender melhor como funciona os parâmetros IN e OUT, execute o
---programa abaixo e veja como os valores são retornados:
+-- Para entender melhor como funciona os parâmetros IN e OUT, execute o
+-- programa abaixo e veja como os valores são retornados:
 
 SET SERVEROUTPUT ON;
 DECLARE
@@ -25,8 +25,8 @@ BEGIN
    dbms_output.put_line(v_CNPJ || '      ' || v_CNPJ_SAIDA);
 END;
 
---Existe uma forma de usar o parâmetro como entrada e saída ao mesmo
---tempo (IN OUT). Crie uma procedure como abaixo e teste:
+-- Existe uma forma de usar o parâmetro como entrada e saída ao mesmo
+-- tempo (IN OUT). Crie uma procedure como abaixo e teste:
 
 CREATE OR REPLACE PROCEDURE FORMATA_CNPJ_SIMPLES_INOUT
 (p_CNPJ IN OUT cliente.cnpj%type)
@@ -34,7 +34,7 @@ IS
 BEGIN
    p_CNPJ := SUBSTR(p_CNPJ, 1,3) || '/' || SUBSTR(p_CNPJ, 4,2) || '-' || SUBSTR(p_CNPJ,6);
 END;
---Para testar, faça:
+-- Para testar, faça:
 SET SERVEROUTPUT ON;
 DECLARE
    v_CNPJ cliente.cnpj%type;
@@ -75,8 +75,8 @@ EXECUTE INCLUIR_CLIENTE (7, 'MERCADINHO QWE', '999266292999',1,10000);
 EXECUTE INCLUIR_CLIENTE (8, 'TAVERNA POI', '999244292999',1,10000);
 EXECUTE INCLUIR_CLIENTE (9, 'BAR 222', '999233292999',1,10000);
 
---Crie uma função chamada ATUALIZAR_SEGMENTO, que vai mudar o segmento
---de mercado de um determinado cliente:
+-- Crie uma função chamada ATUALIZAR_SEGMENTO, que vai mudar o segmento
+-- de mercado de um determinado cliente:
 
 CREATE OR REPLACE PROCEDURE ATUALIZAR_SEGMERCADO
 (p_ID CLIENTE.ID%type, p_SEGMERCADO_ID CLIENTE.SEGMERCADO_ID%type)

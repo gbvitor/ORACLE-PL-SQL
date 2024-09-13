@@ -1,7 +1,7 @@
 ### O objetivo agora é atualizar todos os segmentos de mercados de todos os clientes, é possível ultilizando um looping.
 
 ```sql
---usando a estrutura LOOP ... END LOOP:
+-- usando a estrutura LOOP ... END LOOP:
 
 DECLARE
    v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 3;
@@ -47,7 +47,7 @@ END;
 ```
 
 ```sql
---É possível passar os parâmetros de forma nomeada para a procedure:
+-- É possível passar os parâmetros de forma nomeada para a procedure:
 
 DECLARE
    v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 1;

@@ -15,7 +15,7 @@ No ambiente Oracle, você pode usar o pacote DBMS_OUTPUT para enviar mensagens p
 ### Bloco de código anônimo em PL/SQL.
 
 ```SQL
---Programa para cria v_DESCRICAO:
+-- Programa para cria v_DESCRICAO:
 
 DECLARE
    v_ID SEGMERCADO.ID%type := 1;
@@ -44,7 +44,7 @@ BEGIN
    RETURN v_DESCRICAO;
 END;
 
---Mostra o conteudo ultilizando a função criada:
+-- Mostra o conteudo ultilizando a função criada:
 
 SELECT ID, obter_descricao_segmercado(ID), DESCRICAO, LOWER(DESCRICAO) FROM SEGMERCADO;
 ```
