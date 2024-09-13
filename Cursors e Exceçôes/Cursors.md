@@ -73,3 +73,34 @@ BEGIN
    CLOSE cur_CLIENTE;
 END;
 ```
+
+```sql
+--É possível gerenciar o CURSOR usando a estrutura de repetição WHILE ... LOOP:
+
+DECLARE
+   v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 3;
+   v_ID CLIENTE.ID%type;
+   CURSOR cur_CLIENTE IS SELECT ID FROM CLIENTE;
+BEGIN
+   OPEN cur_CLIENTE;
+   FETCH cur_CLIENTE INTO v_ID;
+   WHILE cur_CLIENTE%FOUND LOOP
+      ATUALIZAR_SEGMERCADO(v_ID, v_SEGMERCADO);
+      FETCH cur_CLIENTE INTO v_ID;
+   END LOOP;
+   CLOSE cur_CLIENTE;
+END;
+```
+
+```sql
+--Ou então você pode usar o FOR, onde muitos comandos de atualização do gerenciamento do CURSOR, dentro do programa PL/SQL, são automaticamente declaradas:
+
+DECLARE
+   v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 1;
+   CURSOR cur_CLIENTE IS SELECT ID FROM CLIENTE;
+BEGIN
+   FOR linha_cur_CLIENTE IN cur_CLIENTE LOOP
+      ATUALIZAR_SEGMERCADO (linha_cur_CLIENTE.ID, v_SEGMERCADO);
+   END LOOP;
+END;
+```

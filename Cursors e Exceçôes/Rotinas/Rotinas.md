@@ -83,7 +83,7 @@ Insert into PRODUTO_VENDA_EXERCICIO (ID,COD_PRODUTO,DATA,QUANTIDADE,PRECO,VALOR_
 
 ----------------------------------------------------------
 
-create or replace FUNCTION categoria_cliente
+CREATE OR REPLACE FUNCTION categoria_cliente
 (p_FATURAMENTO IN CLIENTE.FATURAMENTO_PREVISTO%type)
 RETURN CLIENTE.CATEGORIA%type
 IS
@@ -101,7 +101,7 @@ BEGIN
   RETURN v_CATEGORIA;
 END;
 
-create or replace FUNCTION obter_descricao_segmercado
+CREATE OR REPLACE FUNCTION obter_descricao_segmercado
 (p_ID IN SEGMERCADO.ID%type)
 RETURN SEGMERCADO.DESCRICAO%type
 IS
@@ -111,7 +111,7 @@ BEGIN
     RETURN v_DESCRICAO;
 END;
 
-create or replace FUNCTION RETORNA_CATEGORIA
+CREATE OR REPLACE FUNCTION RETORNA_CATEGORIA
 (p_COD IN produto_exercicio.cod%type)
 RETURN produto_exercicio.categoria%type
 IS
@@ -121,7 +121,7 @@ BEGIN
     RETURN v_CATEGORIA;
 END;
 
-create or replace FUNCTION RETORNA_IMPOSTO
+CREATE OR REPLACE FUNCTION RETORNA_IMPOSTO
 (p_COD_PRODUTO produto_venda_exercicio.cod_produto%type)
 RETURN produto_venda_exercicio.percentual_imposto%type
 IS
@@ -139,7 +139,7 @@ BEGIN
     RETURN v_IMPOSTO;
 END;
 
-create or replace PROCEDURE ALTERANDO_CATEGORIA_PRODUTO
+CREATE OR REPLACE PROCEDURE ALTERANDO_CATEGORIA_PRODUTO
 (p_COD produto_exercicio.cod%type
 , p_CATEGORIA produto_exercicio.categoria%type)
 IS
@@ -148,7 +148,7 @@ BEGIN
    COMMIT;
 END;
 
-create or replace PROCEDURE EXCLUINDO_PRODUTO
+CREATE OR REPLACE PROCEDURE EXCLUINDO_PRODUTO
 (p_COD produto_exercicio.cod%type)
 IS
 BEGIN
@@ -156,7 +156,7 @@ BEGIN
    COMMIT;
 END;
 
-create or replace PROCEDURE INCLUINDO_DADOS_VENDA
+CREATE OR REPLACE PROCEDURE INCLUINDO_DADOS_VENDA
 (
 p_ID produto_venda_exercicio.id%type,
 p_COD_PRODUTO produto_venda_exercicio.cod_produto%type,
@@ -177,7 +177,7 @@ BEGIN
     COMMIT;
 END;
 
-create or replace PROCEDURE INCLUINDO_PRODUTO
+CREATE OR REPLACE PROCEDURE INCLUINDO_PRODUTO
 (p_COD produto_exercicio.cod%type
 , p_DESCRICAO produto_exercicio.descricao%type
 , p_CATEGORIA produto_exercicio.categoria%type)
@@ -188,7 +188,7 @@ BEGIN
    COMMIT;
 END;
 
-create or replace PROCEDURE incluir_cliente
+CREATE OR REPLACE PROCEDURE incluir_cliente
 (
 p_ID CLIENTE.ID%type,
 p_RAZAO CLIENTE.RAZAO_SOCIAL%type,
@@ -208,7 +208,7 @@ BEGIN
    COMMIT;
 END;
 
-create or replace PROCEDURE incluir_segmercado
+CREATE OR REPLACE PROCEDURE incluir_segmercado
 (p_ID IN SEGMERCADO.ID%type, p_DESCRICAO IN SEGMERCADO.DESCRICAO%type)
 IS
 BEGIN
