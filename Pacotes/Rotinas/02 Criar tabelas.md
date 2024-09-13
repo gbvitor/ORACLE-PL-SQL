@@ -1,5 +1,5 @@
 ```sql
--- Conectar-se ao usuario: user_dev e criar as tabelas
+-- Conectar-se ao usuario: user_dev e criar as tabelas.
 
 CREATE TABLE segmercado (id NUMBER(5),
           descricao VARCHAR2(100));

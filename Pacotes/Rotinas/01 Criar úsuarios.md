@@ -1,5 +1,5 @@
 ```sql
--- Criação do ambiente do curso
+-- Criação do ambiente.
 
 alter session set "_oracle_script"=true;
 
