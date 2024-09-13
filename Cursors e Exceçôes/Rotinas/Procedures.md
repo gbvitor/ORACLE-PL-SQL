@@ -2,6 +2,7 @@
 
 --Inicie esta aula transformando a formatação do CNPJ em uma função, passando
 --como parâmetros o valor de entrada e o valor de saída:
+
 CREATE OR REPLACE PROCEDURE FORMATA_CNPJ
 (p_CNPJ IN cliente.cnpj%type, p_CNPJ_SAIDA OUT cliente.cnpj%type)
 IS
@@ -11,6 +12,7 @@ END;
 
 --Para entender melhor como funciona os parâmetros IN e OUT, execute o
 --programa abaixo e veja como os valores são retornados:
+
 SET SERVEROUTPUT ON;
 DECLARE
    v_CNPJ cliente.cnpj%type;
@@ -25,6 +27,7 @@ END;
 
 --Existe uma forma de usar o parâmetro como entrada e saída ao mesmo
 --tempo (IN OUT). Crie uma procedure como abaixo e teste:
+
 CREATE OR REPLACE PROCEDURE FORMATA_CNPJ_SIMPLES_INOUT
 (p_CNPJ IN OUT cliente.cnpj%type)
 IS
@@ -43,6 +46,7 @@ BEGIN
 END;
 
 -- Altere a procedure INCLUIR_CLIENTE e acrescente a chamada à função FORMATA_CNPJ:
+
 CREATE OR REPLACE PROCEDURE incluir_cliente
 (
 p_ID CLIENTE.ID%type,
@@ -73,6 +77,7 @@ EXECUTE INCLUIR_CLIENTE (9, 'BAR 222', '999233292999',1,10000);
 
 --Crie uma função chamada ATUALIZAR_SEGMENTO, que vai mudar o segmento
 --de mercado de um determinado cliente:
+
 CREATE OR REPLACE PROCEDURE ATUALIZAR_SEGMERCADO
 (p_ID CLIENTE.ID%type, p_SEGMERCADO_ID CLIENTE.SEGMERCADO_ID%type)
 IS

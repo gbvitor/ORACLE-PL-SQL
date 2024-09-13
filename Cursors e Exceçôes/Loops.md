@@ -2,6 +2,7 @@
 
 ```sql
 --usando a estrutura LOOP ... END LOOP:
+
 DECLARE
    v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 3;
    v_ID CLIENTE.ID%type := 1;
@@ -47,6 +48,7 @@ END;
 
 ```sql
 --É possível passar os parâmetros de forma nomeada para a procedure:
+
 DECLARE
    v_SEGMERCADO CLIENTE.SEGMERCADO_ID%type := 1;
    v_NUMCLI INTEGER;
