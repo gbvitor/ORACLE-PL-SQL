@@ -1,7 +1,7 @@
 ```sql
---1) Clique sobre o cabeçalho do pacote.
+-- 1) Clique sobre o cabeçalho do pacote.
 
---2) Altere o código para:
+-- 2) Altere o código para:
 
 create or replace NONEDITIONABLE PACKAGE CLIENTE_PAC
 IS
@@ -30,9 +30,9 @@ PROCEDURE INCLUIR_CLIENTE
 
 END;
 
---3) Clique no ícone de Compilar para Depuração.
+-- 3) Clique no ícone de Compilar para Depuração.
 
---4) Para corrigir o erro, altere o código:
+-- 4) Para corrigir o erro, altere o código:
 
 create or replace NONEDITIONABLE PACKAGE BODY CLIENTE_PAC
 IS
@@ -163,23 +163,23 @@ END;
 
 END;
 
---5) Para passar 5 parâmetros, use o código:
+-- 5) Para passar 5 parâmetros, use o código:
 
 EXECUTE CLIENTE_PAC.INCLUIR_CLIENTE(15,'INCLUIR CLIENTE COM 5 PARAMETROS','99999',2,90000);
 
---6) Mostre o conteúdo da tabela CLIENTE:
+-- 6) Mostre o conteúdo da tabela CLIENTE:
 
 SELECT * FROM CLIENTE;
 
---7) Passe somente 3 parâmetros no pacote:
+-- 7) Passe somente 3 parâmetros no pacote:
 
 EXECUTE CLIENTE_PAC.INCLUIR_CLIENTE(16,'INCLUIR CLIENTE COM 3 PARAMETROS',2);
 
---8) Veja o que aconteceu com a tabela CLIENTE:
+-- 8) Veja o que aconteceu com a tabela CLIENTE:
 
 SELECT * FROM CLIENTE;
 
---9) Altere o código para colocar as funções internas ao pacote:
+-- 9) Altere o código para colocar as funções internas ao pacote:
 
 create or replace NONEDITIONABLE PACKAGE BODY CLIENTE_PAC
 IS
@@ -349,30 +349,30 @@ END;
 
 END;
 
---10) Inclua o cliente usando o pacote:
+-- 10) Inclua o cliente usando o pacote:
 
 SET SERVEROUTPUT ON;
 EXECUTE CLIENTE_PAC.INCLUIR_CLIENTE(18,'INCLUIR CLIENTE PELO PACOTE USANDO PROC INTERNA','22222',2,50000);
 
---11) Execute a procedure INCLUIR_CLIENTE sem chamar o pacote:
+-- 11) Execute a procedure INCLUIR_CLIENTE sem chamar o pacote:
 
 EXECUTE INCLUIR_CLIENTE(19,'INCLUIR CLIENTE FORA DO PACOTE','22222',2,50000);
 
---12) Mostre o resultado na tabela CLIENTE:
+-- 12) Mostre o resultado na tabela CLIENTE:
 
 SELECT * FROM CLIENTE;
 
---13) Crie um novo script associado ao usuário user_dev.
+-- 13) Crie um novo script associado ao usuário user_dev.
 
---14) Para verificar a dependência de INCLUIR_CLIENTE, execute o comando:
+-- 14) Para verificar a dependência de INCLUIR_CLIENTE, execute o comando:
 
 EXECUTE DEPTREE_FILL('procedure','user_dev','INCLUIR_CLIENTE');
 
---15) Veja as dependências com o comando:
+-- 15) Veja as dependências com o comando:
 
 SELECT NESTED_LEVEL, SCHEMA, TYPE, NAME FROM DEPTREE ORDER BY SEQ#;
 
---16) Vá na área do user_app e use o comando:
+-- 16) Vá na área do user_app e use o comando:
 
 create or replace NONEDITIONABLE PROCEDURE APP_INCLUIR_CLIENTE
 (p_ID IN cliente.id%type,
@@ -385,58 +385,58 @@ BEGIN
     CLIENTE_PAC.INCLUIR_CLIENTE(p_ID, p_RAZAO, p_CNPJ, p_SEGMERCADO, p_FATURAMENTO);
 END;
 
---17) Agora, para verificar a dependência de ATUALIZAR_CLI_SEG_MERCADO, execute o comando:
+-- 17) Agora, para verificar a dependência de ATUALIZAR_CLI_SEG_MERCADO, execute o comando:
 
 EXECUTE DEPTREE_FILL('procedure','user_dev','ATUALIZAR_CLI_SEG_MERCADO');
 
---18) Veja as dependências da procedure:
+-- 18) Veja as dependências da procedure:
 
 SELECT NESTED_LEVEL, SCHEMA, TYPE, NAME FROM DEPTREE ORDER BY SEQ#;
 
---19) Veja as dependências de ATUALIZAR_FATURAMENTO_PREVISTO, executando o comando:
+-- 19) Veja as dependências de ATUALIZAR_FATURAMENTO_PREVISTO, executando o comando:
 
 EXECUTE DEPTREE_FILL('procedure','user_dev','ATUALIZAR_FATURAMENTO_PREVISTO');
 
---20) A procedure têm as dependências:
+-- 20) A procedure têm as dependências:
 
 SELECT NESTED_LEVEL, SCHEMA, TYPE, NAME FROM DEPTREE ORDER BY SEQ#;
 
---21) Para verificar as dependências de EXCLUIR_CLIENTE, execute o comando:
+-- 21) Para verificar as dependências de EXCLUIR_CLIENTE, execute o comando:
 
 EXECUTE DEPTREE_FILL('procedure','user_dev','EXCLUIR_CLIENTE');
 
---22) Veja as dependências, executando o comando:
+-- 22) Veja as dependências, executando o comando:
 
 SELECT NESTED_LEVEL, SCHEMA, TYPE, NAME FROM DEPTREE ORDER BY SEQ#;
 
---23) Para verificar as dependências da procedure FORMAT_CNPJ, execute o comando:
+-- 23) Para verificar as dependências da procedure FORMAT_CNPJ, execute o comando:
 
 EXECUTE DEPTREE_FILL('procedure','user_dev','FORMAT_CNPJ');
 
---24) Veja as dependências com o comando:
+-- 24) Veja as dependências com o comando:
 
 SELECT NESTED_LEVEL, SCHEMA, TYPE, NAME FROM DEPTREE ORDER BY SEQ#;
 
---25) Para verificar as dependências da função OBTER_CATEGORIA_CLIENTE, execute o comando:
+-- 25) Para verificar as dependências da função OBTER_CATEGORIA_CLIENTE, execute o comando:
 
 EXECUTE DEPTREE_FILL('function','user_dev','OBTER_CATEGORIA_CLIENTE');
 
---26) Veja as dependências com o comando:
+-- 26) Veja as dependências com o comando:
 
 SELECT NESTED_LEVEL, SCHEMA, TYPE, NAME FROM DEPTREE ORDER BY SEQ#;
 
---27) Para verificar a dependência da função VERIFICA_SEGMENTO_MERCADO, execute o comando:
+-- 27) Para verificar a dependência da função VERIFICA_SEGMENTO_MERCADO, execute o comando:
 
 EXECUTE DEPTREE_FILL('function','user_dev','VERIFICA_SEGMENTO_MERCADO');
 
---28) Para excluir as procedures, execute os comandos:
+-- 28) Para excluir as procedures, execute os comandos:
 
 DROP PROCEDURE INCLUIR_CLIENTE;
 DROP PROCEDURE ATUALIZAR_CLI_SEG_MERCADO;
 DROP PROCEDURE ATUALIZAR_FATURAMENTO_PREVISTO;
 DROP PROCEDURE EXCLUIR_CLIENTE;
 
---29) Agora, apague o restante:
+-- 29) Agora, apague o restante:
 
 DROP PROCEDURE FORMAT_CNPJ;
 DROP FUNCTION OBTER_CATEGORIA_CLIENTE;

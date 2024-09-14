@@ -279,7 +279,7 @@ EXECUTE INCLUIR_SEGMENTO (NULL, 'TRANSPORTES');
 ```
 
 ```sql
--- Dê um duplo clique na função OBTER_CATEGORIA_CLIENTE e observe o código fonte para --determinar a classificação do cliente.
+-- Dê um duplo clique na função OBTER_CATEGORIA_CLIENTE e observe o código fonte para determinar a classificação do cliente.
 
 -- Crie o pacote com as constantes:
 
