@@ -106,7 +106,7 @@ create table deptree_temptab
   seq#                 number
 )
 /
-create or replace procedure deptree_fill (type char, schema char, name char) is
+CREATE OR REPLACE PROCEDURE deptree_fill (type char, schema char, name char) is
   obj_id number;
 begin
   delete from deptree_temptab;

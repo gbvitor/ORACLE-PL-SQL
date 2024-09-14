@@ -132,7 +132,7 @@ EXECUTE CLIENTE_PAC.INCLUIR_CLIENTE(11, 'SEGUNDO CLIENTE INCLUIDO POR USER_APP V
 ```sql
 -- Crie um novo script associado à user_dev e execute os comandos para criar o cabeçalho do pacote:
 
-create or replace PACKAGE CLIENTE_PAC
+CREATE OR REPLACE PACKAGE CLIENTE_PAC
 IS
 PROCEDURE INCLUIR_CLIENTE
     (p_id in cliente.id%type,
@@ -160,7 +160,7 @@ END;
 
 -- ================================================
 
-create or replace PACKAGE BODY CLIENTE_PAC
+CREATE OR REPLACE PACKAGE BODY CLIENTE_PAC
 IS
 PROCEDURE INCLUIR_CLIENTE
     (p_id in cliente.id%type,
